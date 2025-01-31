@@ -125,7 +125,7 @@ function AdicionarAporte({carteiras = [], botaoCarteira, pegarDados}) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const id_carteira = carteiraForm.value;
-        console.log(id_carteira, criptomoedaSimbolo, quantidade, preco);
+        console.log("dados: ", id_carteira, criptomoedaSimbolo, quantidade, preco);
         
         try {
             const response = await fetch("http://localhost:3000/aporte", {
@@ -149,7 +149,6 @@ function AdicionarAporte({carteiras = [], botaoCarteira, pegarDados}) {
             } else {
               const errorMessage = await response.text();
               setMensagemErroAdicionarAporte(errorMessage);
-              console.log(await response.text())
             }
       
           } catch (err) {

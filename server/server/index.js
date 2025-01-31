@@ -13,7 +13,7 @@ const uri_db_nuvem = process.env.MONGO_URI;
 const client = new MongoClient(uri_db_nuvem);
 let db;
 
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const SECRET = process.env.MEU_SEGREDO;
 
@@ -322,15 +322,17 @@ app.post("/aporte", async (req, res) => {
     try {
         const {id_carteira, criptomoeda, preco, quantidade} = req.body;
 
+        if (!id_carteira || !criptomoeda || !preco || !quantidade) {
+            return res.status(400).send("Preencha todos os campos para continuar.") 
+        }
+
         const carteira = await db.collection('carteiras').findOne({ _id: new ObjectId(id_carteira)});
     
         if (!carteira) {
             return res.status(400).send("ID de carteira não válido.")
         }
     
-        if (!criptomoeda || !preco || !quantidade) {
-            return res.status(400).send("Preencha todos os campos para continuar.") 
-        }
+        
 
         if (preco < 0) {
             return res.status(400).send("Preço inválido.")
