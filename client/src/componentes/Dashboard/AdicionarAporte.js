@@ -14,7 +14,7 @@ function AdicionarAporte({carteiras = [], botaoCarteira, pegarDados}) {
     useEffect(() => {
         const fetchCriptomoedas = async () => {
           try {
-            const response = await fetch("http://localhost:3000/criptomoedas/lista");
+            const response = await fetch("https://gerenciamento-cripto.onrender.com/criptomoedas/lista");
             if (response.ok) {
               const prices = await response.json();
               const criptoPrices = prices.map((price) => ({
@@ -128,7 +128,7 @@ function AdicionarAporte({carteiras = [], botaoCarteira, pegarDados}) {
         console.log("dados: ", id_carteira, criptomoedaSimbolo, quantidade, preco);
         
         try {
-            const response = await fetch("http://localhost:3000/aporte", {
+            const response = await fetch("https://gerenciamento-cripto.onrender.com/aporte", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({

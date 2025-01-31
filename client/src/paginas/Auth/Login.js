@@ -17,7 +17,7 @@ function Login() {
     }
 
     try {
-      const resposta = await fetch("http://localhost:3000/login", {
+      const resposta = await fetch("https://gerenciamento-cripto.onrender.com/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -35,7 +35,7 @@ function Cadastro() {
 
     try {
       setGerandoCheckout(true);
-      const resposta = await fetch("http://localhost:3000/criar-sessao-checkout", {
+      const resposta = await fetch("https://gerenciamento-cripto.onrender.com/criar-sessao-checkout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

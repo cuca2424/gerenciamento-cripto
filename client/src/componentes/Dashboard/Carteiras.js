@@ -36,7 +36,7 @@ function Carteiras({carteiras = [], funcaoRecarregar}) {
     }
 
     const deletarCarteira = async (id_carteira) => {
-      const response = await fetch("http://localhost:3000/carteira/excluir", {
+      const response = await fetch("https://gerenciamento-cripto.onrender.com/carteira/excluir", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -54,7 +54,7 @@ function Carteiras({carteiras = [], funcaoRecarregar}) {
     }
 
     const deletarAporte = async (id_aporte) => {
-      const response = await fetch("http://localhost:3000/aporte/excluir", {
+      const response = await fetch("https://gerenciamento-cripto.onrender.com/aporte/excluir", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
