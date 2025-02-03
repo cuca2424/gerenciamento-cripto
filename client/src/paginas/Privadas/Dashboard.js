@@ -37,7 +37,7 @@ function Dashboard() {
 
   const pegarDados = async () => {
     try {
-      const resposta = await fetch(`https://gerenciamento-cripto.onrender.com/carteiras-detalhadas/${id_usuario}`);
+      const resposta = await fetch(`http://3.14.128.97:3000/carteiras-detalhadas/${id_usuario}`);
 
       if (resposta.ok) {
         const dados = await resposta.json();
@@ -57,7 +57,7 @@ function Dashboard() {
     }
 
     try {
-      const response = await fetch("https://gerenciamento-cripto.onrender.com/carteira", {
+      const response = await fetch("http://3.14.128.97:3000/carteira", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(req),
