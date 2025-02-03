@@ -8,7 +8,7 @@ function Filtros() {
 
     const buscarDados = async (parametros = "") => {
       try {
-          const resposta = await fetch(`https://gerenciamento-cripto.onrender.com/criptomoedas${parametros}`);
+          const resposta = await fetch(`http://3.14.128.97:3000/criptomoedas${parametros}`);
           
           if (!resposta.ok) {
               throw new Error("Erro ao buscar dados da API");
