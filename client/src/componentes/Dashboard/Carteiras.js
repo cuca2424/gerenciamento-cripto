@@ -36,7 +36,7 @@ function Carteiras({carteiras = [], funcaoRecarregar}) {
     }
 
     const deletarCarteira = async (id_carteira) => {
-      const response = await fetch("http://3.14.128.97:3000/carteira/excluir", {
+      const response = await fetch("http://147.93.67.125:3001/carteira/excluir", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -54,7 +54,7 @@ function Carteiras({carteiras = [], funcaoRecarregar}) {
     }
 
     const deletarAporte = async (id_aporte) => {
-      const response = await fetch("http://3.14.128.97:3000/aporte/excluir", {
+      const response = await fetch("http://147.93.67.125:3001/aporte/excluir", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
