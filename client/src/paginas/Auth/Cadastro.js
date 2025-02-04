@@ -35,7 +35,7 @@ function Cadastro() {
 
     try {
       setGerandoCheckout(true);
-      const resposta = await fetch("http://3.14.128.97:3000/criar-sessao-checkout", {
+      const resposta = await fetch("http://147.93.67.125:3001/criar-sessao-checkout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
