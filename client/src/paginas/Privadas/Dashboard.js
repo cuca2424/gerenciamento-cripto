@@ -37,7 +37,7 @@ function Dashboard() {
 
   const pegarDados = async () => {
     try {
-      const resposta = await fetch(`http://3.14.128.97:3000/carteiras-detalhadas/${id_usuario}`);
+      const resposta = await fetch(`http://147.93.67.125:3001/carteiras-detalhadas/${id_usuario}`);
 
       if (resposta.ok) {
         const dados = await resposta.json();
@@ -57,7 +57,7 @@ function Dashboard() {
     }
 
     try {
-      const response = await fetch("http://3.14.128.97:3000/carteira", {
+      const response = await fetch("http://147.93.67.125:3001/carteira", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(req),
